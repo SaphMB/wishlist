@@ -2,7 +2,7 @@
 function addToList(item) {
 	var script = '<li>' + item + '<span class=\'label pending\'>Pending</span>' + '</li>';
 	$('#items').append(script);
-}
+};
 
 $(document).on('click', '#add-to-list', function () {
 	addToList($('#item').val());
@@ -16,3 +16,9 @@ $(document).on('click', '.pending', function () {
 	li_node.addClass('completed');
 	$(this).remove();
 });
+
+function updateTotal() {
+	var pending = $('.total').length;
+	var completed = $('.total').length;
+	var script = $('.total').text('Pending: ' + pending + ' Completed: ' + completed);
+};
